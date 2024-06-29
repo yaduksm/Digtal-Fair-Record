@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <script type="text/javascript">
+ function check1() {
+  if (document.getElementById('password').value ==
+    document.getElementById('confirm_password').value) {
+    document.getElementById('message').style.color = 'green';
+    document.getElementById('message').innerHTML = 'matching';
+  } else {
+    document.getElementById('message').style.color = 'red';
+    document.getElementById('message').innerHTML = 'not matching';
+  }
+}
+    </script>
+	</head>
+<body>
+    <input type="password" id='password' onkeyup="check1()" placeholder="Password" must be 8 character" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" 
+name="password" required/>
+<br>
+<br>
+ <input type="password" id='confirm_password'onkeyup="check1()" placeholder="confirm password" required/>
+  
+</body>
+</html>

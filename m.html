@@ -1,0 +1,126 @@
+<?php
+$con = mysqli_connect('localhost', 'root', '','digitalrecord');
+function list(){
+$result = mysqli_query($con,"SELECT firstname,subject from teacher");
+
+echo "<html>
+<head>
+<title>id list</title>
+<body bgcolor='cyan'>
+<center>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Subject</th>
+  </tr>";
+  while($row = mysqli_fetch_assoc($result)) {
+  echo "  </tr>
+    <td>".$row["name"];
+echo "</td>
+    <td>".$row["subject"];
+echo "</td>
+       </tr>
+
+
+";
+}
+echo "</table><br>";
+echo "
+<input type='button' value='Back' onclick=window.location.href='choice.html';>
+</center>
+</body> ";
+}
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"><link rel="stylesheet" href="./style1.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+ 
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #111;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+</style>
+</head>
+<body>
+
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="hod.html">Profile</a>
+  <a href="#">Services</a>
+  <a href="#">Clients</a>
+  <a href="logout.php">Log out</a>
+</div>
+
+<div id="main">
+  <h2><marquee>Welcome</marquee></h2>
+  <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span>
+<center>
+<input type='button'value='Register Teacher' onclick="window.location.href = 'teach.html';">
+<input type='button'value='Evaluation'>
+<input type='button'value='Status'>
+<input type='button'value='Teachers List' onclick="window.location.href = 'list();';' >
+</center>
+</div>
+
+
+
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+}
+</script>
+   
+</body>
+</html> 

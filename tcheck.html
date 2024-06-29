@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HTML Table with Approve</title>
+</head>
+<body>
+    <form method="post" action="process.php">
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Approve</th>
+            </tr>
+            <tr>
+                <td><input type="text" name="name[]" /></td>
+                <td><input type="checkbox" name="approve[]" /></td>
+            </tr>
+            <tr>
+                <td><input type="text" name="name[]" /></td>
+                <td><input type="checkbox" name="approve[]" /></td>
+            </tr>
+            <tr>
+                <td><input type="text" name="name[]" /></td>
+                <td><input type="checkbox" name="approve[]" /></td>
+            </tr>
+        </table>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

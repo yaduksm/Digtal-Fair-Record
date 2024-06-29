@@ -1,0 +1,10 @@
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  // Get the table data from the form submission
+  $tableData = $_POST['tableData'];
+
+  // Print the table data
+  echo "Table Data:<br>";
+  echo $tableData;
+}
+?>

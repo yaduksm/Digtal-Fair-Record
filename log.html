@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Login Page in HTML with CSS Code Example</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"><link rel="stylesheet" href="./style.css">
+
+</head>
+<style>
+.anim{
+ 
+  background-image: linear-gradient(
+    -225deg,
+    
+    #fff 50%,
+    #000 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2s linear infinite;
+  display: inline-block;
+      font-size: 190px;
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
+</style>
+<body>
+ <div>
+     <div class="wave"></div>
+     <div class="wave"></div>
+     <div class="wave"></div>
+  </div>
+<!-- partial:index.partial.html -->
+<div class="box-form">
+	<div class="left">
+		<div class="overlay">
+		<h1 class='anim'>Digital Fair Record</h1>
+		<p>Welcome </p>
+		</div>
+	</div>
+	<form action='conn.php' method='post'>
+	
+		<div class="right">
+		<h4>Login</h4>
+		<div class="inputs">
+			<input type="text" placeholder="username" name='username'>
+			<br>
+			<input type="password" placeholder="password" name='password'>
+		</div>
+			
+			<br><br>
+			Usertype  <select name='priv'>
+				<Option value='1'>HOD</option>
+				<Option value='2'>TEACHER</option>
+				<Option value='3'>STUDENT</option>
+				</select>
+				<br><br>
+				
+			
+			<br>
+			<input type='submit' value="login">
+</form>
+	</div>
+	
+</div>
+<!-- partial -->
+  
+</body>
+</html>

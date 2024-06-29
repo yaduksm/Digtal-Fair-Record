@@ -1,0 +1,52 @@
+<?php
+
+$con = mysqli_connect('localhost', 'root', '','digitalrecord');
+
+   $ec = $con->query("SELECT id,sum(mark) from pgm group by id");
+ while($row = mysqli_fetch_assoc($ec)) {
+  $id=$row['id'];
+  $mark = $row['sum(mark)'];
+
+echo "<!DOCTYPE html>
+<html>
+<head>
+<link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet' integrity='sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN' crossorigin='anonymous'><link rel='stylesheet' href='./style.css'>
+  <title>Status</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 25%;
+    }
+    
+    th, td {
+      border: 1px solid black;
+      padding: 8px;
+      text-align: left;
+    }
+    
+    th {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+<body>
+  <h1>Request Table</h1>
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Mark
+</th>
+      <th colspan=2>Requests for Approve</th>
+    </tr>
+    <tr>";
+      echo "<td></td>
+      <td></td>
+      <td>Mark</td>
+  <td><input type='radio' name='status' value='Approved'>approve</td><td><input type='radio' name='status' value='Not Approved'>non approval</td>
+}
+    </tr>
+  </table>
+</body>
+</html>
+?>

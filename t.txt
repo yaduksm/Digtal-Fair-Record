@@ -1,0 +1,4 @@
+<?php
+$expno=$_post['expno'];
+echo $echo;
+?>
